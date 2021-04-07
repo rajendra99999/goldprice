@@ -40,7 +40,7 @@ def predict():
         prediction = model.predict(final_input)
         output=round(prediction[0]/28.3495,2)
         
-        return render_template('gold.html', prediction_text='Predicted Gold Price is {}'.format(output))
+        return render_template('gold.html', prediction_text='Predicted Gold Price per gram is {}'.format(output))
 
 if __name__=='__main__':
         app.run(debug=True)
