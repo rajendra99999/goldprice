@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title> Gold Price </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Gold Price in India</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+        
+        <label for="temp">Saving Bank Interest Rate </label><br>
+        <input type="text" id="temp" style="width:400px; height:20px;" name="ir" placeholder="Saving Bank Interest Rate  eg. 0.045" required="required" /><br>
+        <br>
+        <label for="atm">Pracent GDP Growth Rate </label><br>
+        <input type="text" id="atm" style="width:400px; height:20px;" name="gdp" placeholder="Pracent GDP Growth Rate eg. 0.032 " required="required" /><br>
+        <br>
+        <label for="hum">Current Inflation Rate </label><br>
+        <input type="text" id="hum" style="width:400px; height:20px;" name="i" placeholder="Current Inflation Rate eg. 0.041" required="required" /><br>
+        <br>
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
