@@ -38,7 +38,7 @@ def predict():
         input_var=[ir,gdp,i]
         final_input=[np.array(input_var)]
         prediction = model.predict(final_input)
-        output=round(prediction[0],2)
+        output=round(prediction[0]/28.3495,2)
         
         return render_template('gold.html', prediction_text='Predicted Gold Price is {}'.format(output))
 
